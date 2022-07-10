@@ -10,6 +10,16 @@ public class Client : INotifyPropertyChanged
     private string passportSeries;
     private string passportNumber;
 
+    public Client(string firstName, string lastName, string middleName, string fullName, string phoneNumber, string passportSeries, string passportNumber)
+    {
+        FirstName = firstName;
+        LastName = lastName;
+        MiddleName = middleName;
+        PhoneNumber = phoneNumber;
+        PassportSeries = passportSeries;
+        PassportNumber = passportNumber;
+    }
+
     public string FirstName
     {
         get { return firstName; }
