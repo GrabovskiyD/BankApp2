@@ -8,5 +8,6 @@ public partial class MainWindow : Window
         InitializeComponent();
         LoginPage loginPage = new LoginPage(this);
         loginPage.ShowDialog();
+        DataContext = new MainWindowViewModel(new BankProxy(new Bank(), this));
     }
 }

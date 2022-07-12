@@ -1,6 +1,6 @@
 ﻿namespace BankApp.Model;
 
-public class ClientDTO
+public class ClientDTO : INotifyPropertyChanged, IClient
 {
     private string firstName;
     private string lastName;
@@ -55,7 +55,7 @@ public class ClientDTO
         get { return fullName; }
         set
         {
-            fullName = (MiddleName != "") ? $"{LastName} {FirstName} {MiddleName}" : $"{LastName} {FirstName}";
+            fullName = $"{LastName} {FirstName} {MiddleName}";
             OnPropertyChanged("FullName");
         }
     }

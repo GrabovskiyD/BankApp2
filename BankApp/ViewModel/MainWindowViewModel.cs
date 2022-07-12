@@ -2,9 +2,15 @@
 
 public class MainWindowViewModel : INotifyPropertyChanged
 {
-    private ClientDTO selectedClient;
+    private IClient selectedClient;
 
-    public ClientDTO SelectedClient
+    public ObservableCollection<IClient> Clients { get; set; }
+
+    public MainWindowViewModel(IBank bank)
+    {
+        Clients = bank.GetAllClients();
+    }
+    public IClient SelectedClient
     {
         get { return selectedClient; }
         set 

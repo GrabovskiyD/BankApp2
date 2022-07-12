@@ -2,5 +2,5 @@
 
 public interface IBank
 {
-    public ObservableCollection<Client> GetAllClients();
+    public ObservableCollection<IClient> GetAllClients();
 }

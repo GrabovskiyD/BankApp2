@@ -3,17 +3,19 @@
 public class BankProxy : IBank
 {
     private Bank bank;
-    private ObservableCollection<ClientDTO> clients;
-    public BankProxy(Bank bank)
+    private MainWindow mainWindow;
+    public BankProxy(Bank bank, MainWindow mainWindow)
     {
         this.bank = bank;
+        this.mainWindow = mainWindow;
     }
 
-    public ObservableCollection<Client> GetAllClients()
+    public ObservableCollection<IClient> GetAllClients()
     {
-        if(employee is Consultant)
+        ObservableCollection<IClient> clients = new();
+        if(mainWindow.employee is Consultant)
         {
-            foreach(Client client in bank.GetAllClients())
+            foreach(IClient client in bank.GetAllClients())
             {
                 clients.Add(new ClientDTO(client.LastName,
                                             client.FirstName,
@@ -23,5 +25,6 @@ public class BankProxy : IBank
                                             client.PassportNumber));
             }
         }
+        return clients;
     }
 }
