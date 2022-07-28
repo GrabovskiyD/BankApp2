@@ -112,13 +112,13 @@
                 </Grid.ColumnDefinitions>
                 <Button x:Name="changeButton"
                     Grid.Column="0"
-                    Margin="5, 10, 5, 10"
+                    Margin="5, 10, 5, 0"
                     FontFamily="Consolas"
                     FontSize="18"
                     Content="Изменить данные"/>
                 <Button x:Name="addButton"
                     Grid.Column="1"
-                    Margin="5, 10, 5, 10"
+                    Margin="5, 10, 5, 0"
                     FontFamily="Consolas"
                     FontSize="18"
                     Content="Добавить клиента"/>
