@@ -12,6 +12,7 @@ public partial class LoginPage : Window
         };
         manager_btn.Click += delegate (object sender, RoutedEventArgs e)
         {
+            mainWindow.employee = new Manager();
             Close();
         };
     }

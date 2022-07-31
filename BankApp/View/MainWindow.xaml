@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BankApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        Title="MainWindow" Height="600" Width="1200"
         WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -19,10 +19,28 @@
                  SelectedItem="{Binding SelectedClient}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding FullName}"
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding LastName}"
                                FontFamily="Consolas"
                                FontSize="18"
                                />
+                        <TextBlock Text=" "
+                               FontFamily="Consolas"
+                               FontSize="18"
+                               />
+                        <TextBlock Text="{Binding FirstName}"
+                               FontFamily="Consolas"
+                               FontSize="18"
+                               />
+                        <TextBlock Text=" "
+                               FontFamily="Consolas"
+                               FontSize="18"
+                               />
+                        <TextBlock Text="{Binding MiddleName}"
+                               FontFamily="Consolas"
+                               FontSize="18"
+                               />
+                    </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
@@ -38,7 +56,7 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0"
-                            Margin="0, 20, 0, 20">
+                            Margin="0, 0, 0, 20">
                     <TextBlock x:Name="clientLastNameLabel"
                                Margin="5"
                                FontFamily="Consolas"
@@ -71,37 +89,43 @@
                                Text="Номер паспорта"/>
                 </StackPanel>
                 <StackPanel Grid.Column="1"
-                            Margin="0, 20, 0, 20"
+                            Margin="0, 0, 0, 20"
                             DataContext="{Binding SelectedClient}">
-                    <TextBlock x:Name="clientLastName"
+                    <TextBox x:Name="clientLastName"
                                Margin="5"
                                FontFamily="Consolas"
                                FontSize="16"
+                               BorderThickness="0"
                                Text="{Binding LastName, UpdateSourceTrigger=PropertyChanged}"/>
-                    <TextBlock x:Name="clientFirstName"
+                    <TextBox x:Name="clientFirstName"
                                Margin="5"
                                FontFamily="Consolas"
                                FontSize="16"
+                               BorderThickness="0"
                                Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}"/>
-                    <TextBlock x:Name="clientMiddleName"
+                    <TextBox x:Name="clientMiddleName"
                                Margin="5"
                                FontFamily="Consolas"
                                FontSize="16"
+                               BorderThickness="0"
                                Text="{Binding MiddleName, UpdateSourceTrigger=PropertyChanged}"/>
-                    <TextBlock x:Name="clientPhoneNumber"
+                    <TextBox x:Name="clientPhoneNumber"
                                Margin="5"
                                FontFamily="Consolas"
+                               BorderThickness="0"
                                FontSize="16"
                                Text="{Binding PhoneNumber, UpdateSourceTrigger=PropertyChanged}"/>
-                    <TextBlock x:Name="clientPassportSeries"
+                    <TextBox x:Name="clientPassportSeries"
                                Margin="5"
                                FontFamily="Consolas"
                                FontSize="16"
+                               BorderThickness="0"
                                Text="{Binding PassportSeries, UpdateSourceTrigger=PropertyChanged}"/>
-                    <TextBlock x:Name="clientPassportNumber"
+                    <TextBox x:Name="clientPassportNumber"
                                Margin="5"
                                FontFamily="Consolas"
                                FontSize="16"
+                               BorderThickness="0"
                                Text="{Binding PassportNumber, UpdateSourceTrigger=PropertyChanged}"/>
                 </StackPanel>
             </Grid>
